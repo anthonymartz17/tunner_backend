@@ -33,7 +33,7 @@ songs.get("/:id", async (req, res) => {
 	}
 });
 const validations = [checkName, checkArtist, checkBoolean];
-songs.post("/", async (req, res) => {
+songs.post("/", validations, async (req, res) => {
 	try {
 		const createdSong = await createSong(req.body);
 		res.status(200).json(createdSong);
@@ -42,7 +42,7 @@ songs.post("/", async (req, res) => {
 	}
 });
 
-songs.put("/:id", async (req, res) => {
+songs.put("/:id", validations, async (req, res) => {
 	const { id } = req.params;
 	try {
 		const updatedSong = await updateSong(id, req.body);

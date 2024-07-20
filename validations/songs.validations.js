@@ -1,15 +1,17 @@
 const checkName = (req, res, next) => {
 	if (!req.body.name) {
-		res.status(400).json({ error: "Name is required" });
+		return res.status(400).json({ error: "Name is required" });
 	}
-	return next();
+	next();
 };
+
 const checkArtist = (req, res, next) => {
 	if (!req.body.artist) {
-		res.status(400).json({ error: "Artist is required" });
+		return res.status(400).json({ error: "Artist is required" });
 	}
-	return next();
+	next();
 };
+
 const checkBoolean = (req, res, next) => {
 	const { is_favorite } = req.body;
 	if (
@@ -18,8 +20,10 @@ const checkBoolean = (req, res, next) => {
 		is_favorite === "false" ||
 		is_favorite === undefined
 	) {
-		return next();
+		next();
 	} else {
-		res.status(400).json({ error: "is_favorite must be a boolean" });
+		return res.status(400).json({ error: "is_favorite must be a boolean" });
 	}
 };
+
+module.exports = { checkName, checkArtist, checkBoolean };
