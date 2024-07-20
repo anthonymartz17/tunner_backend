@@ -1,4 +1,4 @@
-\c tunner_db
+\c tuner_db
 
 INSERT INTO songs (name, artist, album, time, is_favorite)
 VALUES 
@@ -8,4 +8,4 @@ VALUES
     ('Imagine', 'John Lennon', 'Imagine', '1971-09-09 00:00:00', true),
     ('Thriller', 'Michael Jackson', 'Thriller', '1982-11-30 00:00:00', false);
 
-    SELECT * FROM songs
+    
