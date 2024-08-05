@@ -45,7 +45,7 @@ INSERT INTO users (email, uid) VALUES
 ('amartinez@pursuit.org', 'uid12345');
 
 -- -- Insert admins
-INSERT INTO admin (email, uid) VALUES
+INSERT INTO admins (email, uid) VALUES
 ('anthonymartz17@hotmail.com', 'admin12345');
 
 -- -- Insert playlists

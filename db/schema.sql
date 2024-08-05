@@ -39,10 +39,9 @@ CREATE TABLE users (
 -- -- Admin Tables
 
 -- -- Create the admin table
-CREATE TABLE admin (
+CREATE TABLE admins (
   id SERIAL PRIMARY KEY,
   uid VARCHAR(255) UNIQUE NOT NULL,
-  is_admin BOOL DEFAULT TRUE,
   email VARCHAR(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

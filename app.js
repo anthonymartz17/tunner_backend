@@ -7,6 +7,7 @@ const songsController = require("./controllers/songs.controllers");
 const artistsController = require("./controllers/artists.controllers");
 const albumsController = require("./controllers/albums.controllers");
 const usersController = require("./controllers/users.controllers");
+const adminsController = require("./controllers/admins.controllers");
 
 //middlewares
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use("/songs", songsController);
 app.use("/artists", artistsController);
 app.use("/albums", albumsController);
 app.use("/users", usersController);
+app.use("/admins", adminsController);
 
 //routes
 app.get("/", (req, res) => {
