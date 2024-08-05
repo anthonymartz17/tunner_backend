@@ -38,7 +38,7 @@ songs.post("/", validations, async (req, res) => {
 		const createdSong = await createSong(req.body);
 		res.status(200).json(createdSong);
 	} catch (error) {
-		res.status(200).json({ error: "server error creating song" });
+		res.status(400).json({ error: "server error creating song" });
 	}
 });
 

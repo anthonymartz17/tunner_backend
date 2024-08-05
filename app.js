@@ -1,17 +1,25 @@
 const express = require("express");
-const app = express();
-app.use(express.json());
 const cors = require("cors");
+const app = express();
+
+//controllers
+const songsController = require("./controllers/songs.controllers");
+const artistsController = require("./controllers/artists.controllers");
+
+
+//middlewares
+app.use(express.json());
 app.use(cors());
+app.use("/songs", songsController);
+app.use("/artists", artistsController);
 
-const songsController = require("./controllers/songs.controller")
-app.use("/songs", songsController)
 
+//routes
 app.get("/", (req, res) => {
 	res.send("Welcome to the Tuner app");
 });
 
 app.get("*", (req, res) => {
-	res.status(404).json({msg:"Page not found"})
-})
+	res.status(404).json({ msg: "Page not found" });
+});
 module.exports = app;
