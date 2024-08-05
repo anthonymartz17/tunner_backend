@@ -17,6 +17,31 @@ async function getSong(id) {
 		throw error;
 	}
 }
+async function getSongsByAlbum(album_id) {
+	try {
+		const songs = await db.any(
+			"SELECT * FROM songs WHERE album_id = $1",
+			album_id
+		);
+
+		return songs;
+	} catch (error) {
+		throw error;
+	}
+}
+async function getSongsByArtist(artist_id) {
+	try {
+		const songs = await db.any(
+			"SELECT * FROM songs WHERE artist_id = $1",
+			artist_id
+		);
+
+		return songs;
+	} catch (error) {
+		throw error;
+	}
+}
+
 const createSong = async ({
 	artist_id,
 	album_id,
@@ -63,4 +88,12 @@ async function deleteSong(id) {
 	}
 }
 
-module.exports = { getSongs, getSong, createSong, updateSong, deleteSong };
+module.exports = {
+	getSongs,
+	getSongsByAlbum,
+	getSongsByArtist,
+	getSong,
+	createSong,
+	updateSong,
+	deleteSong,
+};

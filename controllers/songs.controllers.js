@@ -2,6 +2,8 @@ const express = require("express");
 const songs = express.Router();
 const {
 	getSongs,
+	getSongsByAlbum,
+	getSongsByArtist,
 	getSong,
 	createSong,
 	updateSong,
@@ -17,6 +19,24 @@ const {
 songs.get("/", async (req, res) => {
 	try {
 		const songs = await getSongs();
+		res.status(200).json(songs);
+	} catch (error) {
+		throw error;
+	}
+});
+songs.get("/artist/:artist_id", async (req, res) => {
+	try {
+		const { artist_id } = req.params;
+		const songs = await getSongsByArtist(artist_id);
+		res.status(200).json(songs);
+	} catch (error) {
+		throw error;
+	}
+});
+songs.get("/album/:album_id", async (req, res) => {
+	try {
+		const { album_id } = req.params;
+		const songs = await getSongsByAlbum(album_id);
 		res.status(200).json(songs);
 	} catch (error) {
 		throw error;

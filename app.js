@@ -6,7 +6,7 @@ const app = express();
 const songsController = require("./controllers/songs.controllers");
 const artistsController = require("./controllers/artists.controllers");
 const albumsController = require("./controllers/albums.controllers");
-
+const usersController = require("./controllers/users.controllers");
 
 //middlewares
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(cors());
 app.use("/songs", songsController);
 app.use("/artists", artistsController);
 app.use("/albums", albumsController);
-
+app.use("/users", usersController);
 
 //routes
 app.get("/", (req, res) => {

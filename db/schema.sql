@@ -9,13 +9,13 @@ CREATE DATABASE tuner_db;
 -- User tables
 
 -- -- Create the users table
--- CREATE TABLE users (
---   id SERIAL PRIMARY KEY,
---   email VARCHAR(255) NOT NULL,
---   uid VARCHAR(255) UNIQUE NOT NULL,
---   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  uid VARCHAR(255) UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 -- -- Create the playlists table
 -- CREATE TABLE playlists (
@@ -39,14 +39,14 @@ CREATE DATABASE tuner_db;
 -- -- Admin Tables
 
 -- -- Create the admin table
--- CREATE TABLE admin (
---   id SERIAL PRIMARY KEY,
---   uid VARCHAR(255) UNIQUE NOT NULL,
---   is_admin BOOL DEFAULT TRUE,
---   email VARCHAR(255) NOT NULL,
---   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE admin (
+  id SERIAL PRIMARY KEY,
+  uid VARCHAR(255) UNIQUE NOT NULL,
+  is_admin BOOL DEFAULT TRUE,
+  email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 -- Create the artists table
 CREATE TABLE artists (
