@@ -25,19 +25,20 @@ INSERT INTO albums (artist_id, title, release_date, cover_img, genre) VALUES
 ((SELECT id FROM artists WHERE name = 'Shakira'), 'Laundry Service', '2001-11-13', 'https://example.com/laundry_service_cover.jpg', 'Pop');
 
 -- -- Insert songs
--- INSERT INTO songs (artist_id, album_id, name, artist, album, time) VALUES
--- ((SELECT id FROM artists WHERE name = 'J Balvin'), (SELECT id FROM albums WHERE title = 'Vibras'), 'Mi Gente', 'J Balvin', 'Vibras', '2017-06-30 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'J Balvin'), (SELECT id FROM albums WHERE title = 'Colores'), 'Ritmo', 'J Balvin', 'Colores', '2020-07-31 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Cardi B'), (SELECT id FROM albums WHERE title = 'Invasion of Privacy'), 'Bodak Yellow', 'Cardi B', 'Invasion of Privacy', '2017-06-16 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Cardi B'), (SELECT id FROM albums WHERE title = 'WAP (Single)'), 'WAP', 'Cardi B', 'WAP (Single)', '2020-08-07 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Luis Fonsi'), (SELECT id FROM albums WHERE title = 'Vida'), 'Échame la Culpa', 'Luis Fonsi', 'Vida', '2017-11-17 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Luis Fonsi'), (SELECT id FROM albums WHERE title = 'Despacito (Single)'), 'Despacito', 'Luis Fonsi', 'Despacito (Single)', '2017-01-13 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Beyoncé'), (SELECT id FROM albums WHERE title = 'Lemonade'), 'Formation', 'Beyoncé', 'Lemonade', '2016-02-06 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Beyoncé'), (SELECT id FROM albums WHERE title = 'Renaissance'), 'Break My Soul', 'Beyoncé', 'Renaissance', '2022-06-21 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Bad Bunny'), (SELECT id FROM albums WHERE title = 'YHLQMDLG'), 'Vete', 'Bad Bunny', 'YHLQMDLG', '2019-11-27 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Bad Bunny'), (SELECT id FROM albums WHERE title = 'Un Verano Sin Ti'), 'Tití Me Preguntó', 'Bad Bunny', 'Un Verano Sin Ti', '2022-05-06 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Shakira'), (SELECT id FROM albums WHERE title = 'El Dorado'), 'Chantaje', 'Shakira', 'El Dorado', '2016-10-28 00:00:00'),
--- ((SELECT id FROM artists WHERE name = 'Shakira'), (SELECT id FROM albums WHERE title = 'Laundry Service'), 'Hips Don''t Lie', 'Shakira', 'Laundry Service', '2006-02-28 00:00:00');
+INSERT INTO songs (artist_id, album_id, name, artist, album, duration) VALUES
+((SELECT id FROM artists WHERE name = 'J Balvin'), (SELECT id FROM albums WHERE title = 'Vibras'), 'Mi Gente', 'J Balvin', 'Vibras', 210),
+((SELECT id FROM artists WHERE name = 'J Balvin'), (SELECT id FROM albums WHERE title = 'Colores'), 'Ritmo', 'J Balvin', 'Colores', 185),
+((SELECT id FROM artists WHERE name = 'Cardi B'), (SELECT id FROM albums WHERE title = 'Invasion of Privacy'), 'Bodak Yellow', 'Cardi B', 'Invasion of Privacy', 216),
+((SELECT id FROM artists WHERE name = 'Cardi B'), (SELECT id FROM albums WHERE title = 'WAP (Single)'), 'WAP', 'Cardi B', 'WAP (Single)', 158),
+((SELECT id FROM artists WHERE name = 'Luis Fonsi'), (SELECT id FROM albums WHERE title = 'Vida'), 'Échame la Culpa', 'Luis Fonsi', 'Vida', 200),
+((SELECT id FROM artists WHERE name = 'Luis Fonsi'), (SELECT id FROM albums WHERE title = 'Despacito (Single)'), 'Despacito', 'Luis Fonsi', 'Despacito (Single)', 230),
+((SELECT id FROM artists WHERE name = 'Beyoncé'), (SELECT id FROM albums WHERE title = 'Lemonade'), 'Formation', 'Beyoncé', 'Lemonade', 216),
+((SELECT id FROM artists WHERE name = 'Beyoncé'), (SELECT id FROM albums WHERE title = 'Renaissance'), 'Break My Soul', 'Beyoncé', 'Renaissance', 207),
+((SELECT id FROM artists WHERE name = 'Bad Bunny'), (SELECT id FROM albums WHERE title = 'YHLQMDLG'), 'Vete', 'Bad Bunny', 'YHLQMDLG', 213),
+((SELECT id FROM artists WHERE name = 'Bad Bunny'), (SELECT id FROM albums WHERE title = 'Un Verano Sin Ti'), 'Tití Me Preguntó', 'Bad Bunny', 'Un Verano Sin Ti', 202),
+((SELECT id FROM artists WHERE name = 'Shakira'), (SELECT id FROM albums WHERE title = 'El Dorado'), 'Chantaje', 'Shakira', 'El Dorado', 210),
+((SELECT id FROM artists WHERE name = 'Shakira'), (SELECT id FROM albums WHERE title = 'Laundry Service'), 'Hips Don''t Lie', 'Shakira', 'Laundry Service', 208);
+
 
 -- -- Insert users
 -- INSERT INTO users (email, uid) VALUES

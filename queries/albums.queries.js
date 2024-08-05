@@ -1,6 +1,6 @@
 const db = require("../db/dbConfig");
 
-async function getAllAlbums() {
+async function getAlbums() {
 	try {
 		const albums = await db.any("SELECT * FROM albums");
 		return albums;
@@ -39,7 +39,7 @@ async function updateAlbum(
 	id,
 	{ artist_id, title, release_date, cover_img, genre }
 ) {
-	console.log(id,'k llega')
+	console.log(id, "k llega");
 	try {
 		const updatedAlbum = await db.one(
 			"UPDATE albums SET artist_id = $1, title = $2, release_date = $3,  cover_img = $4, genre = $5 WHERE id = $6 RETURNING *",
@@ -63,7 +63,7 @@ async function deleteAlbum(id) {
 	}
 }
 module.exports = {
-	getAllAlbums,
+	getAlbums,
 	getAlbumById,
 	createAlbum,
 	updateAlbum,

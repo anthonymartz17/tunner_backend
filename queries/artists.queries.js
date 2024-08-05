@@ -1,6 +1,6 @@
 const db = require("../db/dbConfig");
 
-async function getAllArtists() {
+async function getArtists() {
 	try {
 		const artists = await db.any("SELECT * FROM artists");
 		return artists;
@@ -30,7 +30,6 @@ async function createArtist({ name, genre, bio }) {
 }
 
 async function updateArtist(id, { name, genre, bio }) {
-	
 	try {
 		const updatedArtist = await db.one(
 			"UPDATE artists SET name = $1, genre = $2, bio = $3 WHERE id = $4 RETURNING *",
@@ -44,14 +43,17 @@ async function updateArtist(id, { name, genre, bio }) {
 
 async function deleteArtist(id) {
 	try {
-		const deletedArtist = await db.one("DELETE FROM artists WHERE id = $1 RETURNING *", id);
+		const deletedArtist = await db.one(
+			"DELETE FROM artists WHERE id = $1 RETURNING *",
+			id
+		);
 		return deletedArtist;
 	} catch (error) {
 		throw error;
 	}
 }
 module.exports = {
-	getAllArtists,
+	getArtists,
 	getArtistById,
 	createArtist,
 	updateArtist,

@@ -71,14 +71,14 @@ CREATE TABLE albums (
 );
 
 -- -- Create the songs table
--- CREATE TABLE songs (
---   id SERIAL PRIMARY KEY,
---   artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
---   album_id INT REFERENCES albums(id) ON DELETE CASCADE,
---   name VARCHAR(255) NOT NULL,
---   artist VARCHAR(100) NOT NULL,
---   album VARCHAR(255) NOT NULL,
---   time TIMESTAMP NOT NULL,
---   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE songs (
+  id SERIAL PRIMARY KEY,
+  artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
+  album_id INT REFERENCES albums(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  artist VARCHAR(100) NOT NULL,
+  album VARCHAR(255) NOT NULL,
+  duration INT NOT NULL, -- Duration in seconds
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

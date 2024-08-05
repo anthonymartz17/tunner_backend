@@ -1,6 +1,6 @@
 const express = require("express");
 const {
-	getAllArtists,
+	getArtists,
 	getArtistById,
 	createArtist,
 	updateArtist,
@@ -11,10 +11,10 @@ const artists = express.Router();
 
 artists.get("/", async (req, res) => {
 	try {
-		const artists = await getAllArtists();
+		const artists = await getArtists();
 		res.status(200).json(artists);
 	} catch (error) {
-		res.status(404).json({ error: "Artist not found" });
+		res.status(404).json({ error: `Artist with id: ${id} not found` });
 	}
 });
 
@@ -24,7 +24,7 @@ artists.get("/:id", async (req, res) => {
 		const artist = await getArtistById(id);
 		res.status(200).json(artist);
 	} catch (error) {
-		res.status(404).json({ error: "Artist not found" });
+		res.status(404).json({ error: `Artist with id: ${id} not found` });
 	}
 });
 artists.post("/", async (req, res) => {
@@ -41,7 +41,7 @@ artists.put("/:id", async (req, res) => {
 		const updatedArtist = await updateArtist(id, req.body);
 		res.status(200).json(updatedArtist);
 	} catch (error) {
-		res.status(404).json({ error: "Artist not found" });
+		res.status(404).json({ error: `Artist with id: ${id} not found` });
 	}
 });
 
@@ -51,7 +51,7 @@ artists.delete("/:id", async (req, res) => {
 		const deletedArtist = await deleteArtist(id);
 		res.status(200).json(deletedArtist);
 	} catch (error) {
-		res.status(404).json({ error: "Artist not found" });
+		res.status(404).json({ error: `Artist with id: ${id} not found` });
 	}
 });
 module.exports = artists;
