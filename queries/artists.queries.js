@@ -30,7 +30,7 @@ async function createArtist({ name, genre, bio }) {
 }
 
 async function updateArtist(id, { name, genre, bio }) {
-	console.log(id, "el id");
+	
 	try {
 		const updatedArtist = await db.one(
 			"UPDATE artists SET name = $1, genre = $2, bio = $3 WHERE id = $4 RETURNING *",

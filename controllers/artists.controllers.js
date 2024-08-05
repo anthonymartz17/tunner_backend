@@ -14,7 +14,7 @@ artists.get("/", async (req, res) => {
 		const artists = await getAllArtists();
 		res.status(200).json(artists);
 	} catch (error) {
-		res.status(404).json({ msg: "Artist not found", error });
+		res.status(404).json({ error: "Artist not found" });
 	}
 });
 

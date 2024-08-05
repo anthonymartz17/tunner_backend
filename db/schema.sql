@@ -59,16 +59,16 @@ CREATE TABLE artists (
 );
 
 -- -- Create the albums table
--- CREATE TABLE albums (
---   id SERIAL PRIMARY KEY,
---   artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
---   title VARCHAR(255) NOT NULL,
---   release_date DATE,
---   cover_img TEXT NOT NULL,
---   genre VARCHAR(255) NOT NULL,
---   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE albums (
+  id SERIAL PRIMARY KEY,
+  artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL,
+  release_date DATE,
+  cover_img TEXT NOT NULL,
+  genre VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 -- -- Create the songs table
 -- CREATE TABLE songs (

@@ -10,19 +10,19 @@ INSERT INTO artists (name, genre, bio) VALUES
 ('Shakira', 'Pop','Colombian singer and songwriter known for her distinctive voice and dance moves.');
 
 -- -- Insert albums
--- INSERT INTO albums (artist_id, title, release_date, cover_img, genre) VALUES
--- ((SELECT id FROM artists WHERE name = 'J Balvin'), 'Vibras', '2018-05-25', 'https://example.com/vibras_cover.jpg', 'Reggaeton'),
--- ((SELECT id FROM artists WHERE name = 'J Balvin'), 'Colores', '2020-03-20', 'https://example.com/colores_cover.jpg', 'Reggaeton'),
--- ((SELECT id FROM artists WHERE name = 'Cardi B'), 'Invasion of Privacy', '2018-04-06', 'https://example.com/invasion_of_privacy_cover.jpg', 'Hip Hop'),
--- ((SELECT id FROM artists WHERE name = 'Cardi B'), 'WAP (Single)', '2020-08-07', 'https://example.com/wap_cover.jpg', 'Hip Hop'),
--- ((SELECT id FROM artists WHERE name = 'Luis Fonsi'), 'Vida', '2019-02-01', 'https://example.com/vida_cover.jpg', 'Latin Pop'),
--- ((SELECT id FROM artists WHERE name = 'Luis Fonsi'), 'Despacito (Single)', '2017-01-13', 'https://example.com/despacito_cover.jpg', 'Latin Pop'),
--- ((SELECT id FROM artists WHERE name = 'Beyoncé'), 'Lemonade', '2016-04-23', 'https://example.com/lemonade_cover.jpg', 'Pop'),
--- ((SELECT id FROM artists WHERE name = 'Beyoncé'), 'Renaissance', '2022-07-29', 'https://example.com/renaissance_cover.jpg', 'Pop'),
--- ((SELECT id FROM artists WHERE name = 'Bad Bunny'), 'YHLQMDLG', '2020-02-29', 'https://example.com/yhlqmdlg_cover.jpg', 'Reggaeton'),
--- ((SELECT id FROM artists WHERE name = 'Bad Bunny'), 'Un Verano Sin Ti', '2022-05-06', 'https://example.com/un_verano_sin_ti_cover.jpg', 'Reggaeton'),
--- ((SELECT id FROM artists WHERE name = 'Shakira'), 'El Dorado', '2017-05-26', 'https://example.com/el_dorado_cover.jpg', 'Pop'),
--- ((SELECT id FROM artists WHERE name = 'Shakira'), 'Laundry Service', '2001-11-13', 'https://example.com/laundry_service_cover.jpg', 'Pop');
+INSERT INTO albums (artist_id, title, release_date, cover_img, genre) VALUES
+((SELECT id FROM artists WHERE name = 'J Balvin'), 'Vibras', '2018-05-25', 'https://example.com/vibras_cover.jpg', 'Reggaeton'),
+((SELECT id FROM artists WHERE name = 'J Balvin'), 'Colores', '2020-03-20', 'https://example.com/colores_cover.jpg', 'Reggaeton'),
+((SELECT id FROM artists WHERE name = 'Cardi B'), 'Invasion of Privacy', '2018-04-06', 'https://example.com/invasion_of_privacy_cover.jpg', 'Hip Hop'),
+((SELECT id FROM artists WHERE name = 'Cardi B'), 'WAP (Single)', '2020-08-07', 'https://example.com/wap_cover.jpg', 'Hip Hop'),
+((SELECT id FROM artists WHERE name = 'Luis Fonsi'), 'Vida', '2019-02-01', 'https://example.com/vida_cover.jpg', 'Latin Pop'),
+((SELECT id FROM artists WHERE name = 'Luis Fonsi'), 'Despacito (Single)', '2017-01-13', 'https://example.com/despacito_cover.jpg', 'Latin Pop'),
+((SELECT id FROM artists WHERE name = 'Beyoncé'), 'Lemonade', '2016-04-23', 'https://example.com/lemonade_cover.jpg', 'Pop'),
+((SELECT id FROM artists WHERE name = 'Beyoncé'), 'Renaissance', '2022-07-29', 'https://example.com/renaissance_cover.jpg', 'Pop'),
+((SELECT id FROM artists WHERE name = 'Bad Bunny'), 'YHLQMDLG', '2020-02-29', 'https://example.com/yhlqmdlg_cover.jpg', 'Reggaeton'),
+((SELECT id FROM artists WHERE name = 'Bad Bunny'), 'Un Verano Sin Ti', '2022-05-06', 'https://example.com/un_verano_sin_ti_cover.jpg', 'Reggaeton'),
+((SELECT id FROM artists WHERE name = 'Shakira'), 'El Dorado', '2017-05-26', 'https://example.com/el_dorado_cover.jpg', 'Pop'),
+((SELECT id FROM artists WHERE name = 'Shakira'), 'Laundry Service', '2001-11-13', 'https://example.com/laundry_service_cover.jpg', 'Pop');
 
 -- -- Insert songs
 -- INSERT INTO songs (artist_id, album_id, name, artist, album, time) VALUES
