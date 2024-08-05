@@ -18,25 +18,17 @@ CREATE TABLE users (
 );
 
 -- -- Create the playlists table
--- CREATE TABLE playlists (
---   id SERIAL PRIMARY KEY,
---   user_id INT REFERENCES users(id) ON DELETE CASCADE,
---   name VARCHAR(255) NOT NULL,
---   description TEXT,
---   cover_img TEXT,
---   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE playlists (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  cover_img TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
--- -- Create the playlist_songs table
--- CREATE TABLE playlist_songs (
---   playlist_id INT REFERENCES playlists(id) ON DELETE CASCADE,
---   song_id INT REFERENCES songs(id) ON DELETE CASCADE,
---   added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---   PRIMARY KEY (playlist_id, song_id)
--- );
 
--- -- Admin Tables
 
 -- -- Create the admin table
 CREATE TABLE admins (
@@ -80,4 +72,13 @@ CREATE TABLE songs (
   duration INT NOT NULL, -- Duration in seconds
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- -- Create the playlist_songs table
+CREATE TABLE playlist_songs (
+  playlist_id INT REFERENCES playlists(id) ON DELETE CASCADE,
+  song_id INT REFERENCES songs(id) ON DELETE CASCADE,
+  added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (playlist_id, song_id)
 );

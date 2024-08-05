@@ -8,6 +8,8 @@ const artistsController = require("./controllers/artists.controllers");
 const albumsController = require("./controllers/albums.controllers");
 const usersController = require("./controllers/users.controllers");
 const adminsController = require("./controllers/admins.controllers");
+const playlistsController = require("./controllers/playlists.controllers");
+// const playlistSongsController = require("./controllers/playlist_songs.controllers");
 
 //middlewares
 app.use(express.json());
@@ -17,6 +19,8 @@ app.use("/artists", artistsController);
 app.use("/albums", albumsController);
 app.use("/users", usersController);
 app.use("/admins", adminsController);
+app.use("/playlists", playlistsController);
+// app.use("/playlist_songs", playlistSongsController);
 
 //routes
 app.get("/", (req, res) => {

@@ -49,13 +49,14 @@ INSERT INTO admins (email, uid) VALUES
 ('anthonymartz17@hotmail.com', 'admin12345');
 
 -- -- Insert playlists
--- INSERT INTO playlists (user_id, name, description, cover_img) VALUES
--- ((SELECT id FROM users WHERE uid = 'uid12345'), 'My Pop Hits', 'A collection of my favorite pop songs', 'https://example.com/pop_hits_cover.jpg'),
--- ((SELECT id FROM users WHERE uid = 'uid12345'), 'Reggaeton Party', 'Best reggaeton tracks for a party', 'https://example.com/reggaeton_party_cover.jpg');
+INSERT INTO playlists (user_id, name, description, cover_img) VALUES
+((SELECT id FROM users WHERE uid = 'uid12345'), 'My Pop Hits', 'A collection of my favorite pop songs', 'https://example.com/pop_hits_cover.jpg'),
+((SELECT id FROM users WHERE uid = 'uid12345'), 'Reggaeton Party', 'Best reggaeton tracks for a party', 'https://example.com/reggaeton_party_cover.jpg'),
+((SELECT id FROM users WHERE uid = 'uid12345'), 'Bachata', 'Best bachata tracks for a party', 'https://example.com/reggaeton_party_cover.jpg');
 
 -- -- Insert playlist_songs
--- INSERT INTO playlist_songs (playlist_id, song_id) VALUES
--- ((SELECT id FROM playlists WHERE name = 'My Pop Hits'), (SELECT id FROM songs WHERE name = 'Formation')),
--- ((SELECT id FROM playlists WHERE name = 'My Pop Hits'), (SELECT id FROM songs WHERE name = 'Break My Soul')),
--- ((SELECT id FROM playlists WHERE name = 'Reggaeton Party'), (SELECT id FROM songs WHERE name = 'Mi Gente')),
--- ((SELECT id FROM playlists WHERE name = 'Reggaeton Party'), (SELECT id FROM songs WHERE name = 'Ritmo'));
+INSERT INTO playlist_songs (playlist_id, song_id) VALUES
+(1,7),
+(1,4),
+(2,3),
+(2,9); 
