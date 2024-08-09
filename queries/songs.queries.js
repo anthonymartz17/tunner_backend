@@ -1,5 +1,7 @@
 const db = require("../db/dbConfig");
+const admin = require("../firebase-admin")
 async function getSongs() {
+
 	try {
 		const songs = await db.any("SELECT * FROM songs");
 		return songs;
@@ -7,6 +9,7 @@ async function getSongs() {
 		throw error;
 	}
 }
+
 
 async function getSong(id) {
 	try {
@@ -49,11 +52,12 @@ const createSong = async ({
 	artist,
 	album,
 	duration,
+	admin_id,
 }) => {
 	try {
 		const newSong = await db.one(
-			"INSERT INTO songs (artist_id, album_id, name, artist, album, duration) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *",
-			[artist_id, album_id, name, artist, album, duration]
+			"INSERT INTO songs (artist_id, album_id, name, artist, album, duration) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *",
+			[artist_id, album_id, name, artist, album, duration, admin_id]
 		);
 		return newSong;
 	} catch (error) {

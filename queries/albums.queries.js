@@ -23,11 +23,12 @@ async function createAlbum({
 	release_date,
 	cover_img,
 	genre,
+	admin_id
 }) {
 	try {
 		const newAlbum = await db.one(
-			"INSERT INTO albums (artist_id, title, release_date, cover_img, genre) VALUES ($1,$2,$3,$4,$5) RETURNING *",
-			[artist_id, title, release_date, cover_img, genre]
+			"INSERT INTO albums (artist_id, title, release_date, cover_img, genre,admin_id) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *",
+			[artist_id, title, release_date, cover_img, genre,admin_id]
 		);
 		return newAlbum;
 	} catch (error) {

@@ -42,9 +42,11 @@ CREATE TABLE admins (
 -- Create the artists table
 CREATE TABLE artists (
   id SERIAL PRIMARY KEY,
+  admin_id VARCHAR(255) NOT NULL REFERENCES admins(uid),
   name VARCHAR(255) NOT NULL,
   genre VARCHAR(255) NOT NULL,
   bio TEXT,
+  cover_img TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -52,6 +54,7 @@ CREATE TABLE artists (
 -- -- Create the albums table
 CREATE TABLE albums (
   id SERIAL PRIMARY KEY,
+  admin_id VARCHAR(255) NOT NULL REFERENCES admins(uid),
   artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
   release_date DATE,
@@ -64,12 +67,14 @@ CREATE TABLE albums (
 -- -- Create the songs table
 CREATE TABLE songs (
   id SERIAL PRIMARY KEY,
+  admin_id VARCHAR(255) NOT NULL REFERENCES admins(uid),
   artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
   album_id INT REFERENCES albums(id) ON DELETE CASCADE,
   name VARCHAR(255) NOT NULL,
   artist VARCHAR(100) NOT NULL,
   album VARCHAR(255) NOT NULL,
-  duration INT NOT NULL, -- Duration in seconds
+  duration INT NOT NULL, 
+  cover_img TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -82,3 +87,4 @@ CREATE TABLE playlist_songs (
   added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (playlist_id, song_id)
 );
+

@@ -7,6 +7,8 @@ const {
 	deleteArtist,
 } = require("../queries/artists.queries.js");
 
+const { validateToken } = require("../middlewares/auth.middleware.js");
+
 const artists = express.Router();
 
 artists.get("/", async (req, res) => {
@@ -27,12 +29,12 @@ artists.get("/:id", async (req, res) => {
 		res.status(404).json({ error: `Artist with id: ${id} not found` });
 	}
 });
-artists.post("/", async (req, res) => {
+artists.post("/", validateToken, async (req, res) => {
 	try {
 		const newArtist = await createArtist(req.body);
 		res.status(200).json(newArtist);
 	} catch (error) {
-		res.status(400).json({ error: "Bad request" });
+		res.status(400).json({ error: "Bad request", error });
 	}
 });
 artists.put("/:id", async (req, res) => {

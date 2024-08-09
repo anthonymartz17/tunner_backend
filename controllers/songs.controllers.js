@@ -14,7 +14,7 @@ const {
 	checkName,
 	checkArtist,
 	checkBoolean,
-} = require("../validations/songs.validations");
+} = require("../middlewares/songs.middleware");
 
 songs.get("/", async (req, res) => {
 	try {

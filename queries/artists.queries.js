@@ -2,7 +2,7 @@ const db = require("../db/dbConfig");
 
 async function getArtists() {
 	try {
-		const artists = await db.any("SELECT * FROM artists");
+		const artists = await db.any("SELECT * FROM artists ORDER BY created_at DESC");
 		return artists;
 	} catch (error) {
 		throw error;
@@ -17,11 +17,11 @@ async function getArtistById(id) {
 		throw error;
 	}
 }
-async function createArtist({ name, genre, bio }) {
+async function createArtist({ name, genre, bio, cover_img,admin_id }) {
 	try {
 		const newArtist = await db.one(
-			"INSERT INTO artists (name, genre, bio) VALUES ($1,$2,$3) RETURNING *",
-			[name, genre, bio]
+			"INSERT INTO artists (name, genre, bio,cover_img,admin_id) VALUES ($1,$2,$3,$4,$5) RETURNING *",
+			[name, genre, bio, cover_img,admin_id]
 		);
 		return newArtist;
 	} catch (error) {
